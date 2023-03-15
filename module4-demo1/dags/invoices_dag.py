@@ -15,13 +15,13 @@ from airflow.operators.python_operator import PythonOperator
 
 default_args = {
     "owner": "airflow",
-    "start_date": datetime(2020, 11, 1),
+    "start_date": datetime(2023, 3, 11),
     "depends_on_past": False,
     "email_on_failure": False,
     "email_on_retry": False,
-    "email": "axel.sirota@gmail.com",
+    "email": "tgreiner1983@gmail.com",
     "retries": 1,
-    "retry_delay": timedelta(minutes=5)
+    "retry_delay": timedelta(minutes=1)
 }
 
 data_path = f'{json.loads(BaseHook.get_connection("data_path").get_extra()).get("path")}/data.csv'
